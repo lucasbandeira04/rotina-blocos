@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotina de Projetos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="app-header">
+        <div class="header-content">
+            <div class="title-date">
+                <h1><i class="fa-solid fa-bolt"></i> Rotina de Projetos</h1>
+                <p id="current-date">--</p>
+            </div>
+            <div class="progress-section" id="global-progress-section">
+                <div class="progress-info">
+                    <span>Progresso do Dia</span>
+                    <span id="overall-progress-text">0%</span>
+                </div>
+                <div class="progress-bar-bg">
+                    <div class="progress-bar-fill" id="overall-progress-fill"></div>
+                </div>
+            </div>
+            <div class="header-actions">
+                <div class="drive-status-container">
+                    <button id="btn-drive-connect" class="btn-drive"><i class="fa-brands fa-google-drive"></i> Conectar Drive</button>
+                    <div id="drive-sync-status" class="sync-status" style="display: none;">
+                        <span id="sync-status-text">Desconectado (Nuvem)</span>
+                        <button id="btn-sync-now" class="btn-icon" aria-label="Sincronizar Agora" disabled><i class="fa-solid fa-rotate"></i></button>
+                    </div>
+                </div>
+                <button id="edit-mode-btn" class="btn-secondary"><i class="fa-solid fa-gear"></i> Gerenciar Rotina</button>
+                <button id="reset-day-btn" class="btn-primary"><i class="fa-solid fa-rotate-right"></i> Resetar Dia</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="blocks-container" id="blocks-container">
+        <!-- Blocos serão renderizados aqui pelo app.js -->
+    </main>
+
+    <script src="https://accounts.google.com/gsi/client" onload="if(window.initGoogleDrive) window.initGoogleDrive()" async defer></script>
+    <script src="js/drive.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
